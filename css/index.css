@@ -1,0 +1,232 @@
+/*清除元素默认的内外边距  */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*让所有斜体 不倾斜*/
+
+em,
+i {
+    font-style: normal;
+}
+
+
+/*去掉列表前面的小点*/
+
+li {
+    list-style: none;
+}
+
+
+/*图片没有边框   去掉图片底侧的空白缝隙*/
+
+img {
+    border: 0;
+    /*ie6*/
+    vertical-align: middle;
+}
+
+
+/*让button 按钮 变成小手*/
+
+button {
+    cursor: pointer;
+}
+
+
+/*取消链接的下划线*/
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #e33333;
+}
+
+h4 {
+    font-weight: 400;
+}
+
+
+/* <!-- PC端 1024-1920自适应 --> */
+
+@media screen and (max-width:1024px) {
+    html {
+        font-size: 42.66px !important;
+    }
+}
+
+@media screen and (min-width:1920px) {
+    html {
+        font-size: 80px !important;
+    }
+}
+
+body {
+    box-sizing: border-box;
+    background: url(../images/bg.jpg) no-repeat;
+    background-size: cover;
+}
+
+.viewport {
+    display: flex;
+    max-width: 1024px;
+    min-width: 1920px;
+    margin: 0 auto;
+    padding: 1.1rem .25rem 0;
+    background: url(../images/logo.png) no-repeat 0 0 /contain;
+    min-height: 780px;
+}
+
+.viewport .column {
+    flex: 3;
+}
+
+.viewport .column:nth-child(2) {
+    margin: 0.4rem 0.25rem 0;
+    flex: 4;
+}
+
+
+/* 公共面板样式 */
+
+.panel {
+    position: relative;
+    border: solid;
+    border-width: .6375rem .475rem .25rem 1.65rem;
+    border-image-slice: 51 38 20 132;
+    border-image-source: url(../images/border.png);
+    margin-bottom: 0.25rem;
+}
+
+.inner {
+    position: absolute;
+    top: -.6375rem;
+    left: -1.65rem;
+    right: -.475rem;
+    bottom: -.25rem;
+    padding: .3rem .45rem;
+}
+
+.overview {
+    height: 1.375rem;
+}
+
+.overview h4 {
+    font-size: .35rem;
+    color: #fff;
+    margin: 0 0 .1rem .06rem;
+}
+
+.overview span {
+    font-size: .2rem;
+    color: #4c9bfd;
+}
+
+.overview ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* 监控区域 */
+
+.monitor {
+    height: 6rem;
+}
+
+.monitor .inner {
+    padding: .3rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.monitor .tabs {
+    padding: 0 .45rem;
+    margin-bottom: 0.225rem;
+    display: flex;
+}
+
+.monitor .tabs a {
+    color: #1950c4;
+    font-size: 0.225rem;
+    padding: 0 .3375rem;
+}
+
+.monitor .tabs a:first-child {
+    padding-left: 0;
+    border-right: 0.025rem solid #00f2f1;
+}
+
+.monitor .tabs a.active {
+    color: #fff;
+}
+
+.monitor .content {
+    flex: 1;
+    position: relative;
+    display: none;
+}
+
+.monitor .head {
+    display: flex;
+    justify-content: space-between;
+    line-height: 1.05;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.15rem 0.45rem;
+    color: #68d8fe;
+    font-size: 0.175rem;
+}
+
+.monitor .marquee-view {
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.monitor .row {
+    display: flex;
+    justify-content: space-between;
+    line-height: 1.05;
+    font-size: 0.15rem;
+    color: #61a8ff;
+    padding: 0.15rem 0.45rem;
+}
+
+.monitor .row .icon-dot {
+    position: absolute;
+    left: 0.2rem;
+    opacity: 0;
+}
+
+.monitor .row:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #68d8fe;
+}
+
+.monitor .row:hover .icon-dot {
+    opacity: 1;
+}
+
+.monitor .col:first-child {
+    width: 1rem;
+}
+
+.monitor .col:nth-child(2) {
+    width: 2.5rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.monitor .col:nth-child(3) {
+    width: 1rem;
+}
